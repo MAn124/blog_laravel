@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [RegisteredController::class,'register'])->name('register');
 
 Route::get('/', function () {
     return view('layout.master');
