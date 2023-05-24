@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/register', [RegisteredController::class,'register'])->name('register');
+Route::get('/register', [AuthController::class,'register'])->name('register');
+Route::post('/register', [AuthController::class,'registering'])->name('registering');
 
 Route::get('/', function () {
     return view('layout.master');
 });
-Route::get('/auth/redirect/{provider}', function ($provider) {
+Route::get('/auth/redirect/{provider?}', function ($provider) {
     return  Socialite::driver('$provider')->redirect();
 })->name('auth.redirect');
  
