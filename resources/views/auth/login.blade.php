@@ -16,9 +16,10 @@
 <body class="bg-silver-300 has-animation">
     <div class="content">
         <div class="brand">
-            <a class="link" href="index.html">AdminCAST</a>
+            <a class="link" href="index.html">Blog Admin</a>
         </div>
         <form id="login-form" action="javascript:;" method="post" novalidate="novalidate">
+            @csrf
             <h2 class="login-title">Log in</h2>
             <div class="form-group">
                 <div class="input-group-icon right">
@@ -45,7 +46,7 @@
                 <span>Or login with</span>
             </div>
             <div class="text-center social-auth m-b-20">
-                <a class="btn btn-social-icon btn-github m-r-5" href="{{route('auth.redirect',['provider'])}}"><i class="fa fa-twitter"></i></a>
+                <a class="btn btn-social-icon btn-github m-r-5" href=""><i class="fa fa-twitter"></i></a>
                 <a class="btn btn-social-icon btn-facebook m-r-5" href="javascript:;"><i class="fa fa-facebook"></i></a>
                 <a class="btn btn-social-icon btn-google m-r-5" href="javascript:;"><i class="fa fa-google-plus"></i></a>
                 <a class="btn btn-social-icon btn-linkedin m-r-5" href="javascript:;"><i class="fa fa-linkedin"></i></a>
