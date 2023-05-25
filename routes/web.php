@@ -8,13 +8,13 @@ use App\Models\User;
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'loginning'])->name('loginning');
+Route::post('/login', [AuthController::class, 'postlogin'])->name('postlogin');
 Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('/register', [AuthController::class,'registering'])->name('registering');
 
 Route::get('/', function () {
     return view('layout.master');
-});
+})->name('welcome');
 // Route::get('/auth/redirect/{provider}', function ($provider) {
 //     return  Socialite::driver($provider)->redirect();
 // })->name('auth.redirect');

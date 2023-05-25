@@ -18,7 +18,20 @@
         <div class="brand">
             <a class="link" href="index.html">Blog Admin</a>
         </div>
-        <form id="login-form" action="javascript:;" method="post" novalidate="novalidate">
+        @if (count($errors) >0)
+         <ul>
+             @foreach($errors->all() as $error)
+                 <li class="text-danger"> {{ $error }}</li>
+             @endforeach
+         </ul>
+     @endif
+
+     @if (session('status'))
+         <ul>
+             <li class="text-danger"> {{ session('status') }}</li>
+         </ul>
+     @endif
+        <form id="login-form" action="{{route('postlogin')}}" method="post" novalidate="novalidate">
             @csrf
             <h2 class="login-title">Log in</h2>
             <div class="form-group">
