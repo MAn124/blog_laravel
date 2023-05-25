@@ -45,7 +45,7 @@
                 <span>Or login with</span>
             </div>
             <div class="text-center social-auth m-b-20">
-                <a class="btn btn-social-icon btn-github m-r-5" href="{{route('auth.redirect')}}"><i class="fa fa-twitter"></i></a>
+                <a class="btn btn-social-icon btn-github m-r-5" href="{{route('auth.redirect',['provider'])}}"><i class="fa fa-twitter"></i></a>
                 <a class="btn btn-social-icon btn-facebook m-r-5" href="javascript:;"><i class="fa fa-facebook"></i></a>
                 <a class="btn btn-social-icon btn-google m-r-5" href="javascript:;"><i class="fa fa-google-plus"></i></a>
                 <a class="btn btn-social-icon btn-linkedin m-r-5" href="javascript:;"><i class="fa fa-linkedin"></i></a>
