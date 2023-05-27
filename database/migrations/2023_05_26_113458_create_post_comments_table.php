@@ -18,7 +18,7 @@ class CreatePostCommentsTable extends Migration
             $table->unsignedInteger('views');
             $table->foreignId('post_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->varchar('comment')->constrained();
+            $table->char('comment')->constrained();
         });
     }
 

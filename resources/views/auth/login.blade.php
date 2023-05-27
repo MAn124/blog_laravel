@@ -66,7 +66,7 @@
                 <a class="btn btn-social-icon btn-vk" href="javascript:;"><i class="fa fa-vk"></i></a>
             </div>
             <div class="text-center">Not a member?
-                <a class="color-blue" href="{{route('register')}}">Create accaunt</a>
+                <a class="color-blue" href="{{route('register')}}">Create account</a>
             </div>
         </form>
     </div>

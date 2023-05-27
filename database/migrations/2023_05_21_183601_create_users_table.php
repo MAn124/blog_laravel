@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('level')->default(0);
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->date('created_at');
-            $table->date('updated_at');
+            $table->date('updated_at')->nullable();
         });
     }
 

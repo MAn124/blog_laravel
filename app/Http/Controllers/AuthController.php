@@ -21,8 +21,12 @@ class AuthController extends Controller
         }
     }
     public function postlogin(LoginRequest $request) {
-        $credential = $request->only('email','password');
-       
+        $credential = $request->only(['email','password', 'role' == 1]);
+        if (Auth::attempt($credential)) {
+            return redirect()->intended('welcome');
+        } else {
+            return redirect("login")->with('Login details are not valid');
+        }
     }
     public function logout() {
         Auth::logout();
@@ -38,7 +42,7 @@ class AuthController extends Controller
         $passowrd = Hash::make($request->password);
         User::create([
             'name'=> $request->name,
-            'email'=> $request->name,
+            'email'=> $request->email,
             'password'=> $passowrd,
         ]);
     }
