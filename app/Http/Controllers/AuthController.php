@@ -45,5 +45,6 @@ class AuthController extends Controller
             'email'=> $request->email,
             'password'=> $passowrd,
         ]);
+        return redirect()->route('auth.login');
     }
 }

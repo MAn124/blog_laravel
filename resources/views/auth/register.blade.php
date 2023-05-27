@@ -32,9 +32,15 @@
             </div>
             <div class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
+                @if ($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <input class="form-control" id="password" type="password" name="password" placeholder="Password">
+                @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
             </div>
         
             <div class="form-group text-left">
