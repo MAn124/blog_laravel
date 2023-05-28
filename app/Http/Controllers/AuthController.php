@@ -21,12 +21,15 @@ class AuthController extends Controller
         }
     }
     public function postlogin(LoginRequest $request) {
-        $credential = $request->only(['email','password', 'role' == 1]);
-        if (Auth::attempt($credential)) {
-            return redirect()->intended('welcome');
-        } else {
-            return redirect("login")->with('Login details are not valid');
-        }
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $user = Auth::attempt(['email' => $email, 'password' => $password]);
+     if($user){
+        return redirect()->route('welcome');
+     } else {
+        return redirect()->route('login');
+     }
+       
     }
     public function logout() {
         Auth::logout();

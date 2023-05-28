@@ -51,6 +51,10 @@
                 <label class="ui-checkbox ui-checkbox-info">
                     <input type="checkbox" name="agree">
                     <span class="input-span"></span>I agree the terms and policy</label>
+                    <br />
+                    @if ($errors->has('agree'))
+                    <span class="text-danger">{{ $errors->first('agree') }}</span>
+                    @endif
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" name="level" id="application" value="1" >

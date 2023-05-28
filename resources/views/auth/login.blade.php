@@ -18,14 +18,6 @@
         <div class="brand">
             <a class="link" href="index.html">Blog Admin</a>
         </div>
-        @if (count($errors) >0)
-         <ul>
-             @foreach($errors->all() as $error)
-                 <li class="text-danger"> {{ $error }}</li>
-             @endforeach
-         </ul>
-     @endif
-
      @if (session('status'))
          <ul>
              <li class="text-danger"> {{ session('status') }}</li>
@@ -38,12 +30,18 @@
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
                     <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
+                    @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-lock font-16"></i></div>
                     <input class="form-control" type="password" name="password" placeholder="Password">
+                    @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                    @endif
                 </div>
             </div>
             <div class="form-group d-flex justify-content-between">

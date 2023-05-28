@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email'=> 'required ',
-            'pasword'=> 'required ',
+            'password'=> 'required ',
         ];
     }
     public function messages()
