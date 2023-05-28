@@ -38,13 +38,13 @@ class AuthController extends Controller
         return view('auth.register');
     }
     
-    public function registering(Request $request) {
+    public function registering(RegisterRequest $request) {
         $passowrd = Hash::make($request->password);
         User::create([
             'name'=> $request->name,
             'email'=> $request->email,
             'password'=> $passowrd,
         ]);
-        return redirect()->route('auth.login');
+        return redirect()->route('login');
     }
 }

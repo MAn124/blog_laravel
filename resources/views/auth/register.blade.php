@@ -26,11 +26,15 @@
                 <div class="col-12">
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Name">
+                        @if ($errors->has('name'))
+                        <span class="text-danger">{{ $errors->first('name') }}</span>
+                        @endif
                     </div>
                 </div>
                
             </div>
             <div class="form-group">
+             
                 <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
                 @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -49,26 +53,21 @@
                     <span class="input-span"></span>I agree the terms and policy</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="role" id="application" value="1" >
+                <input type="radio" name="level" id="application" value="1" >
                 <label for="" style="margin">Admin</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="role" id="application" value="0" >
+                <input type="radio" name="level" id="application" value="0" >
                 <label for="">User</label>
             </div>
+            <br />
+            @if ($errors->has('level'))
+                <span class="text-danger">{{ $errors->first('level') }}</span>
+            @endif
             <div class="form-group">
                 <button class="btn btn-info btn-block" type="submit">Sign up</button>
             </div>
-            <div class="social-auth-hr">
-                <span>Or Sign up with</span>
-            </div>
-            <div class="text-center social-auth m-b-20">
-                <a class="btn btn-social-icon btn-twitter m-r-5" href="javascript:;"><i class="fa fa-twitter"></i></a>
-                <a class="btn btn-social-icon btn-facebook m-r-5" href="javascript:;"><i class="fa fa-facebook"></i></a>
-                <a class="btn btn-social-icon btn-google m-r-5" href="javascript:;"><i class="fa fa-google-plus"></i></a>
-                <a class="btn btn-social-icon btn-linkedin m-r-5" href="javascript:;"><i class="fa fa-linkedin"></i></a>
-                <a class="btn btn-social-icon btn-vk" href="javascript:;"><i class="fa fa-vk"></i></a>
-            </div>
+           
             <div class="text-center">Already a member?
                 <a class="color-blue" href="{{route('login')}}">Login here</a>
             </div>

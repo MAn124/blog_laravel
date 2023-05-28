@@ -24,9 +24,11 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required | unique | email',
+            'email' => 'required | email',
             'name' => 'required',
             'password' => 'required|min:8',
+            'level' => 'required',
+            'agree' => 'required',
         ];
     }
     public function messages()
@@ -34,7 +36,10 @@ class RegisterRequest extends FormRequest
         return [
             'email.unique' => 'email already exists', 
             'email.required' => 'please enter email address', 
+            'name.required' => 'please enter name ', 
             'email.email' => 'wrong email format', 
+            'level.required' => 'please select your role', 
+            'agree.required' => 'You not accept our policy yet', 
 
         ];
     }
