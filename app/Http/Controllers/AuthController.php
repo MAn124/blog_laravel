@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserRoleEnum;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -24,6 +25,8 @@ class AuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $user = Auth::attempt(['email' => $email, 'password' => $password]);
+        $role = UserRoleEnum::getKeys(role);
+        dd($role);
      if($user){
         return redirect()->route('welcome');
      } else {
