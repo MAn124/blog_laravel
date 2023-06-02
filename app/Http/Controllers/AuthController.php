@@ -22,13 +22,14 @@ class AuthController extends Controller
         }
     }
     public function postlogin(LoginRequest $request) {
+      
         $email = $request->input('email');
         $password = $request->input('password');
         $user = Auth::attempt(['email' => $email, 'password' => $password]);
-        $role = UserRoleEnum::getKeys(role);
+        $role = UserRoleEnum::fromValue(User::query()->where('level')->get());
         dd($role);
      if($user){
-        return redirect()->route('welcome');
+        return redirect()->route('login');
      } else {
         return redirect()->route('login');
      }
@@ -49,6 +50,7 @@ class AuthController extends Controller
         User::create([
             'name'=> $request->name,
             'email'=> $request->email,
+            'level'=> $request->level,
             'password'=> $passowrd,
         ]);
         return redirect()->route('login');

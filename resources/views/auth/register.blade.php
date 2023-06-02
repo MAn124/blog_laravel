@@ -58,7 +58,7 @@
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" name="level" id="application" value="1" >
-                <label for="" style="margin">Admin</label>
+                <label for="">Admin</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" name="level" id="application" value="0" >
