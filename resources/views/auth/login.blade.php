@@ -32,7 +32,7 @@
                     <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
                     @if ($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
-                    @endif
+                    @endif 
                 </div>
             </div>
             <div class="form-group">

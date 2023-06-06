@@ -15,19 +15,18 @@ class AuthController extends Controller
 {
     public function login() {
 
-        if(Auth::check()) {
-            return redirect()->route('welcome');
-        }else {
+        // if(Auth::check()) {
+        //     return redirect()->route('welcome');
+        // }else {
             return view('auth.login');
-        }
+        // }
     }
     public function postlogin(LoginRequest $request) {
       
         $email = $request->input('email');
         $password = $request->input('password');
         $user = Auth::attempt(['email' => $email, 'password' => $password]);
-        $role = UserRoleEnum::fromValue(User::query()->where('level')->get());
-        dd($role);
+       
      if($user){
         return redirect()->route('login');
      } else {

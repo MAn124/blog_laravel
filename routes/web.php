@@ -12,7 +12,7 @@ Route::post('/login', [AuthController::class, 'postlogin'])->name('postlogin');
 Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('/register', [AuthController::class,'registering'])->name('registering');
 
-Route::post('/login', [AuthController::class,'logout'])->name('logout');
+// Route::post('/login', [AuthController::class,'logout'])->name('logout');
 
 
 Route::get('/', function () {
