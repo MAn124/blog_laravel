@@ -6,8 +6,11 @@
                 <div class="card-body">
                     <table class="table table-hover table-centered mb-0">
                         <thead>
-                            <tr>#</tr>
-                            <tr>name</tr>
+                            <tr>
+                                <td>#</td>
+                                <td>name</td>
+                            </tr>
+                           
                         </thead>
                         <tbody>
                         @foreach ($data as $each)
