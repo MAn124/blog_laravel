@@ -25,10 +25,11 @@ class AuthController extends Controller
       
         $email = $request->input('email');
         $password = $request->input('password');
+       
         $user = Auth::attempt(['email' => $email, 'password' => $password]);
        
-     if($user){
-        return redirect()->route('login');
+     if($user && Auth::user()->level == 1){
+        return redirect()->route('welcome');
      } else {
         return redirect()->route('login');
      }

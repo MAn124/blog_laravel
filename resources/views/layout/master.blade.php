@@ -23,7 +23,16 @@
         <!-- END SIDEBAR-->
         <div class="content-wrapper">
             <!-- START PAGE CONTENT-->
-            
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h4>
+                            {{$title}}
+                        </h4>
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
             <!-- END PAGE CONTENT-->
         @include('layout.footer')
         </div>

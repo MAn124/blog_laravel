@@ -9,8 +9,8 @@
         </div>
         <ul class="side-menu metismenu">
             <li>
-                <a class="active" href="{{asset('logout')}}"><i class="sidebar-item-icon fa fa-th-large"></i>
-                    <span class="nav-label">Dashboard</span>
+                <a class="active" href="{{route('index')}}"><i class="sidebar-item-icon fa fa-th-large"></i>
+                    <span class="nav-label">Users</span>
                 </a>
             </li>
            
