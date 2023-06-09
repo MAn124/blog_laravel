@@ -14,13 +14,14 @@ Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('/register', [AuthController::class,'registering'])->name('registering');
 
 // Route::post('/login', [AuthController::class,'logout'])->name('logout');
-
+Route::get('/', function () {
+    return view('layout.master');
+})->name('welcome');
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/', function () {
-        return view('layout.master');
-    })->name('welcome');
+    
     Route::prefix('/users')->group(function () {
         Route::get('/', [UserController::class,'index'])->name('index');
+        Route::get('/{user}', [UserController::class,'show'])->name('show');
     });
 });

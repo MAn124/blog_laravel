@@ -18,6 +18,7 @@ class UserController extends Controller
         $this->model = User::query();
         $this->table = (new User())->getTable();
         View()->share('title', $this->table);
+        View()->share('table', $this->table);
     }
 
     public function index() {

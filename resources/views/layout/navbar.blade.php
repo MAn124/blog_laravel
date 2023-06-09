@@ -1,6 +1,6 @@
 <header class="header">
 <div class="page-brand">
-    <a class="link" href="{{route('register')}}">
+    <a class="link" href="{{route('welcome')}}">
         <span class="brand">Admin
             <span class="brand-tip">CAST</span>
         </span>
