@@ -18,10 +18,9 @@ Route::get('/', function () {
     return view('layout.master');
 })->name('welcome');
 
-Route::prefix('/admin')->group(function () {
-    
+Route::prefix('/admin')->group(function () {  
     Route::prefix('/users')->group(function () {
         Route::get('/', [UserController::class,'index'])->name('index');
-        Route::get('/{user}', [UserController::class,'show'])->name('show');
+        Route::get('/{user}', [UserController::class,'detail'])->name('detail');
     });
 });

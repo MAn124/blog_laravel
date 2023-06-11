@@ -52,7 +52,7 @@
     <script src="{{asset('js/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
     <!-- CORE SCRIPTS-->
     <script src="{{asset('js/app.min.js')}}" type="text/javascript"></script>
-
+    @stack('js')
 
 
 

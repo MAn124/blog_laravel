@@ -5,7 +5,17 @@
             <div class="card">
                 
                 <div class="card-body">
-                    
+                    <form  id="role-filter">
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-control select-filter" name="role">
+                            <option selected >All</option>
+                            @foreach ($roles as $role => $value)                               
+                                <option value="{{$value}}">{{$role}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    </form>
                     <table class="table table-hover table-centered mb-0">
                         <thead>
                             <tr>
@@ -19,23 +29,20 @@
                         <tbody>
                         @foreach ($data as $each)
                         <tr>
-                            <td> <a href="{{route("admin.$table.show", $each)}}">
-                                
+                            <td> <a href="">                              
                                 {{ $each->id}}
-                                </a>
-                            
+                                </a>                           
                                 </td>
                                 <td>
-                                    {{ $each->name}}
+                                    {{ $each->name}} 
                                 </td>
                                 <td>
                                     <a href="mailto:{{$each->email}}">
                                         {{ $each->email}}
-                                    </a>
-                                   
+                                    </a>                                  
                                 </td>
                                 <td>
-                                    {{ $each->level}}
+                                    {{ $each->level_name}}
                                 </td>
                             </tr>
                             @endforeach
@@ -46,3 +53,12 @@
         </div>
     </div>
 @endsection
+@push('js')
+   <script>
+    $(document).ready(function(){
+        $(".select-filter").change(function(){
+            $("#role-filter").submit();
+        });
+    });
+    </script> 
+@endpush
